@@ -2,9 +2,9 @@ namespace StudentAPI.Domain.Entities;
 
 public class BoMon
 {
-    public Guid id { get; set; }
-    public string maBM { get; set; } = string.Empty;
+    public int Id { get; set; }
+    public string? MaBoMon { get; set; }
 
-    public string tenBM { get; set; } = string.Empty;
-    public ICollection<LopHoc>? lopHocs { get; set; }
+    public string? TenBoMon { get; set; }
+    public ICollection<LopHoc>? LopHocs { get; set; }
 }
