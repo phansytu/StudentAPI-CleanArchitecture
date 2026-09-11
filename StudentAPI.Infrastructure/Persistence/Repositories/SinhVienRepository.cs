@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Domain.Entities;
 
 namespace StudentAPI.Infrastructure.Persistence.Repositories;
