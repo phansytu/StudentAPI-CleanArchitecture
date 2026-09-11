@@ -1,7 +1,7 @@
 using StudentAPI.Application.Common.Models;
 using StudentAPI.Domain.Entities;
 
-namespace StudentAPI.Application.Common.Interface
+namespace StudentAPI.Application.Common.Interfaces
 {
     public interface ISinhVienRepository
     {
@@ -15,6 +15,12 @@ namespace StudentAPI.Application.Common.Interface
         int pageIndex,
         int pageSize,
         CancellationToken cancellationToken = default);
+        Task<SinhVien?> GetByIdAsync(int id, CancellationToken cancellationToken);
+        Task<SinhVien?> GetByMsvAsync(string maSV, CancellationToken cancellationToken);
+        Task AddAsync(SinhVien student, CancellationToken cancellationToken);
+        Task UpdateAsync(SinhVien student);
+        Task DeleteAsync(SinhVien student);
+
     }
 
 }

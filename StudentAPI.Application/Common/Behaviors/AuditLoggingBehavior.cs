@@ -1,8 +1,8 @@
 using System.Text.Json;
 using MediatR;
-using VLXD.Application.Common.Interfaces;
+using StudentAPI.Application.Common.Interfaces;
 
-namespace VLXD.Application.Common.Behaviors;
+namespace StudentAPI.Application.Common.Behaviors;
 
 // Chỉ áp dụng cho ICommand — Query (đọc dữ liệu) không cần ghi nhật ký thao tác
 public class AuditLoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>

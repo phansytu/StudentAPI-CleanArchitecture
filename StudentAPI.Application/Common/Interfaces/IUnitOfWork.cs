@@ -1,4 +1,4 @@
-namespace Application.Common.Interfaces;
+namespace StudentAPI.Application.Common.Interfaces;
 
 public interface IUnitOfWork
 {

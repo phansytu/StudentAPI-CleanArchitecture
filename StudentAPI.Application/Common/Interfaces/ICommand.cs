@@ -1,5 +1,5 @@
 using MediatR;
-namespace VLXD.Application.Common.Interfaces
+namespace StudentAPI.Application.Common.Interfaces
 {
     public interface ICommand<TResponse> : IRequest<TResponse> { }
     public interface ICommand : IRequest { }

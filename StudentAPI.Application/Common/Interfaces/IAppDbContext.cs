@@ -1,6 +1,6 @@
 using StudentAPI.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-namespace StudentAPI.Application.Common.Interface;
+namespace StudentAPI.Application.Common.Interfaces;
 
 public interface IAppDbContext
 {

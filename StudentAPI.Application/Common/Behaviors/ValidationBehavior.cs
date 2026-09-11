@@ -1,7 +1,7 @@
 using FluentValidation;
 using MediatR;
 
-namespace VLXD.Application.Common.Behaviors;
+namespace StudentAPI.Application.Common.Behaviors;
 
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

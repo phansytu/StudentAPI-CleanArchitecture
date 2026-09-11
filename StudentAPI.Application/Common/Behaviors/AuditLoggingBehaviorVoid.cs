@@ -1,8 +1,8 @@
 using System.Text.Json;
 using MediatR;
-using VLXD.Application.Common.Interfaces;
+using StudentAPI.Application.Common.Interfaces;
 
-namespace VLXD.Application.Common.Behaviors;
+namespace StudentAPI.Application.Common.Behaviors;
 
 public class AuditLoggingBehaviorVoid<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : ICommand
