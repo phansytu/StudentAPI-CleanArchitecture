@@ -2,7 +2,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using StudentAPI.Application.Common.Exceptions;
-namespace StudentAPI.Web.Middlewares
+namespace StudentAPI.WebAPI.Middlewares
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
