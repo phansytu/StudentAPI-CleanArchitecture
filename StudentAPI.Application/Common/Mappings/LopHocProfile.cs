@@ -2,6 +2,7 @@ using AutoMapper;
 using StudentAPI.Application.DTOs.Response;
 using StudentAPI.Application.Features.LopHoc.Commands.CapNhatLopHoc;
 using StudentAPI.Application.Features.LopHoc.Commands.TaoLopHoc;
+using StudentAPI.Application.Features.LopHoc.Common;
 using StudentAPI.Domain.Entities;
 
 namespace StudentAPI.Application.Common.Mappings;

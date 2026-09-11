@@ -1,8 +1,8 @@
-using Application.Common.Interfaces;
+
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 
 namespace StudentAPI.Application.Features.LopHoc.Commands.TaoLopHoc;
 

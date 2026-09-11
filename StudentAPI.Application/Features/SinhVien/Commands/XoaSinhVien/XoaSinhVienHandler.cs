@@ -1,8 +1,8 @@
-using Application.Common.Interfaces;
+
 using AutoMapper;
 using MediatR;
 using StudentAPI.Application.Common.Exceptions;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Features.SinhVien.Common;
 
 namespace StudentAPI.Application.Features.SinhVien.Commands.XoaSinhVien;

@@ -1,7 +1,7 @@
 using MediatR;
 using StudentAPI.Application.Common.Models;
 using StudentAPI.Application.Features.SinhVien.Common;
-using VLXD.Application.Common.Interfaces;
+using StudentAPI.Application.Common.Interfaces;
 
 namespace StudentAPI.Application.Features.SinhVien.Queries.LayDanhSachSinhVien;
 

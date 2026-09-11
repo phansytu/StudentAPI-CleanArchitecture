@@ -1,8 +1,6 @@
-using Application.Common.Interfaces;
 using AutoMapper;
 using MediatR;
-using StudentAPI.Application.Common.Interface;
-using StudentAPI.Domain.Entities;
+using StudentAPI.Application.Common.Interfaces;
 namespace StudentAPI.Application.Features.SinhVien.Commands.TaoSinhVien;
 
 public class TaoSinhVienHandler : IRequestHandler<TaoSinhVienCommand, int>

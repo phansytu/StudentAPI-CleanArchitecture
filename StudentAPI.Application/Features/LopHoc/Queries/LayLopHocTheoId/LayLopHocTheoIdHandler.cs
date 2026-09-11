@@ -1,7 +1,7 @@
 using AutoMapper;
 using MediatR;
 using StudentAPI.Application.Common.Exceptions;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Features.LopHoc.Common;
 using LopHocEntity = StudentAPI.Domain.Entities.LopHoc;
 namespace StudentAPI.Application.Features.LopHoc.Queries.LayLopHocTheoId;

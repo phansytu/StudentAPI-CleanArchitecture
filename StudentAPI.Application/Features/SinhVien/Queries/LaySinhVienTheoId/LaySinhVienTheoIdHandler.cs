@@ -1,7 +1,7 @@
 using AutoMapper;
 using MediatR;
 using StudentAPI.Application.Common.Exceptions;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Features.SinhVien.Common;
 
 namespace StudentAPI.Application.Features.SinhVien.Queries.LaySinhVienTheoId;
@@ -10,10 +10,10 @@ public class LaySinhVienTheoIdHandler : IRequestHandler<LaySinhVienTheoIdQuery, 
 {
 
     private readonly ISinhVienRepository _sinhVienRepository;
-    private readonly Mapper _mapper;
+    private readonly IMapper _mapper;
     public LaySinhVienTheoIdHandler(
         ISinhVienRepository sinhVienRepository,
-        Mapper mapper)
+        IMapper mapper)
     {
         _sinhVienRepository = sinhVienRepository;
         _mapper = mapper;

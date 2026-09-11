@@ -1,6 +1,6 @@
 using AutoMapper;
 using MediatR;
-using StudentAPI.Application.Common.Interface;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Common.Models;
 using StudentAPI.Application.Features.LopHoc.Common;
 
@@ -25,11 +25,7 @@ public class LayDanhSachLopHocQueryHandler : IRequestHandler<LayDanhSachLopHocQu
             request.PageSize,
             cancellationToken
         );
-
-
         var items = _mapper.Map<List<LopHocDto>>(data);
-
-
         return new PageResponse<LopHocDto>(
             items,
             totalCount,
