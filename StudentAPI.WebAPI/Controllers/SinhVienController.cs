@@ -7,6 +7,7 @@ using StudentAPI.Application.Features.SinhVien.Commands.TaoSinhVien;
 using StudentAPI.Application.Features.SinhVien.Commands.XoaSinhVien;
 using StudentAPI.Application.Features.SinhVien.Common;
 using StudentAPI.Application.Features.SinhVien.Queries.LayDanhSachSinhVien;
+using StudentAPI.Application.Features.SinhVien.Queries.LayDanhSachSinhVienPhanTrang;
 using StudentAPI.Application.Features.SinhVien.Queries.LaySinhVienTheoId;
 
 namespace StudentAPI.WebAPI.Controllers;
@@ -58,5 +59,11 @@ public class SinhVienController : ControllerBase
     {
         var result = await _mediator.Send(new XoaSinhVienCommand(id));
         return Ok(ApiResponse<bool>.SuccessResult(result, "Xóa sinh viên thành công"));
+    }
+    [HttpGet("paged-advanced")]
+    public async Task<IActionResult> GetPagedAdvanced([FromQuery] LayDanhSachSinhVienPhanTrangQuery query)
+    {
+        var result = await _mediator.Send(query);
+        return Ok(result);
     }
 }

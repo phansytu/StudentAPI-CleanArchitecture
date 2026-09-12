@@ -22,6 +22,8 @@ public static class DependencyInjection
         services.AddScoped<IAppDbContext>(provider =>
             (IAppDbContext)provider.GetRequiredService<AppDbContext>());
 
+        services.AddSingleton<ISqlConnectionFactory, SqlConnectionFactory>();
+
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddScoped<ISinhVienRepository, SinhVienRepository>();

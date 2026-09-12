@@ -1,8 +1,18 @@
 namespace StudentAPI.Application.Common.Models;
 
-public record PageResponse<T>(List<T> Items, int TotalCount, int PageIndex, int PageSize)
+public class PageResponse<T>
 {
-    public int TotalPages => (int)Math.Ceiling((double)TotalCount / PageSize);
-    public bool HasNextPage => PageIndex < TotalPages;
-    public bool HasPreviousPage => PageIndex > 1;
+    public IEnumerable<T> Items { get; set; }
+    public int PageIndex { get; set; }
+    public int PageSize { get; set; }
+    public int TotalRecords { get; set; }
+    public int TotalPages => (int)Math.Ceiling((double)TotalRecords / PageSize);
+
+    public PageResponse(IEnumerable<T> items, int totalRecords, int pageIndex, int pageSize)
+    {
+        Items = items;
+        TotalRecords = totalRecords;
+        PageIndex = pageIndex;
+        PageSize = pageSize;
+    }
 }
