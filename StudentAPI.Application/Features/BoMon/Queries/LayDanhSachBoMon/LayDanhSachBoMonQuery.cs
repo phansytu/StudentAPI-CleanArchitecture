@@ -1,4 +1,5 @@
 using MediatR;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Common.Models;
 using StudentAPI.Application.Features.BoMon.Common;
 
@@ -8,4 +9,4 @@ public record LayDanhSachBoMonQuery(
     int PageIndex = 1,
     int PageSize = 10,
     string? SearchTerm = null
-) : IRequest<PageResponse<BoMonDto>>;
+) : IQuery<PageResponse<BoMonDto>>;

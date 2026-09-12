@@ -14,4 +14,4 @@ public record LayDanhSachSinhVienQuery(
     bool Descending = false,
     int PageIndex = 1,
     int PageSize = 20
-) : ICommand<PageResponse<SinhVienDto>>;
+) : IQuery<PageResponse<SinhVienDto>>;

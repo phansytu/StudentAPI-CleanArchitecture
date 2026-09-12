@@ -8,4 +8,4 @@ public record LayBaoCaoChiTietSinhVienQuery(
     int? LopHocId = null,
     int? BoMonId = null,
     string? Keyword = null
-) : ICommand<IEnumerable<BaoCaoChiTietSinhVienDto>>;
+) : IQuery<IEnumerable<BaoCaoChiTietSinhVienDto>>;

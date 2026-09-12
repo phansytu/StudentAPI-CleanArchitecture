@@ -1,6 +1,6 @@
-using MediatR;
+using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.Features.BoMon.Common;
 
 namespace StudentAPI.Application.Features.BoMon.Queries.LayBoMonTheoId;
 
-public record LayBoMonTheoIdQuery(int Id) : IRequest<BoMonDto>;
+public record LayBoMonTheoIdQuery(int Id) : IQuery<BoMonDto>;

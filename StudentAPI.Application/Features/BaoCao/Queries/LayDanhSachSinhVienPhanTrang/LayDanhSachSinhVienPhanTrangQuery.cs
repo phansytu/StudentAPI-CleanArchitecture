@@ -15,4 +15,4 @@ public record LayDanhSachSinhVienPhanTrangQuery(
     int? BoMonId = null,
     double? MinDiem = null,
     double? MaxDiem = null
-) : IRequest<PageResponse<SinhVienPagedDto>>;
+) : IQuery<PageResponse<SinhVienPagedDto>>;
