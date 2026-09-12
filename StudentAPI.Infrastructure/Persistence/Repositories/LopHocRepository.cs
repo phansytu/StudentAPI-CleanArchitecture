@@ -44,7 +44,7 @@ public class LopHocRepository : ILopHocRepository
     {
         var exists = await _context.LopHocs
             .AsNoTracking()
-            .AnyAsync(x => x.MaLop.ToLower() == maLop.Trim().ToLower(), cancellationToken);
+            .AnyAsync(x => x.MaLop!.ToLower() == maLop.Trim().ToLower(), cancellationToken);
 
         return !exists;
     }

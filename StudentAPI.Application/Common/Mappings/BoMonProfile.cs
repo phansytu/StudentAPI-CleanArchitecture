@@ -1,5 +1,4 @@
 using AutoMapper;
-using StudentAPI.Application.DTOs.Response;
 using StudentAPI.Application.Features.BoMon.Commands.CapNhatBoMon;
 using StudentAPI.Application.Features.BoMon.Commands.TaoBoMon;
 using StudentAPI.Application.Features.BoMon.Common;

@@ -3,7 +3,7 @@ using MediatR;
 using StudentAPI.Application.Common.Interfaces;
 using StudentAPI.Application.DTOs;
 
-namespace StudentAPI.Application.Features.BaoCao.Queries.LayThongKeLopHoc;
+namespace StudentAPI.Application.Features.BaoCao.Queries.LayThongKeTheoLop;
 
 public class LayThongKeLopHocHandler : IRequestHandler<LayThongKeLopHocQuery, IEnumerable<ThongKeLopHocDto>>
 {

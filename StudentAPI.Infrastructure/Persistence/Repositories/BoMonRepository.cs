@@ -24,8 +24,8 @@ public class BoMonRepository : IBoMonRepository
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
             var term = searchTerm.Trim().ToLower();
-            query = query.Where(x => x.MaBoMon.ToLower().Contains(term) ||
-                                     x.TenBoMon.ToLower().Contains(term));
+            query = query.Where(x => x.MaBoMon!.ToLower().Contains(term) ||
+                                     x.TenBoMon!.ToLower().Contains(term));
         }
         var totalCount = await query.CountAsync(cancellationToken);
 
@@ -49,14 +49,14 @@ public class BoMonRepository : IBoMonRepository
     {
         return await _context.BoMons
             .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.MaBoMon.ToLower() == maBoMon.Trim().ToLower(), cancellationToken);
+            .FirstOrDefaultAsync(x => x.MaBoMon!.ToLower() == maBoMon.Trim().ToLower(), cancellationToken);
     }
 
     public async Task<BoMon?> GetByTenBoMonAsync(string tenBoMon, CancellationToken cancellationToken = default)
     {
         return await _context.BoMons
             .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.TenBoMon.ToLower() == tenBoMon.Trim().ToLower(), cancellationToken);
+            .FirstOrDefaultAsync(x => x.TenBoMon!.ToLower() == tenBoMon.Trim().ToLower(), cancellationToken);
     }
 
     public async Task AddAsync(BoMon boMon, CancellationToken cancellationToken = default)

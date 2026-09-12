@@ -30,8 +30,8 @@ public class SinhVienRepository : ISinhVienRepository
         if (!string.IsNullOrWhiteSpace(keyWord))
         {
             var keywordLower = keyWord.Trim().ToLower();
-            query = query.Where(x => x.MaSV.ToLower().Contains(keywordLower)
-                                  || x.HoTen.ToLower().Contains(keywordLower));
+            query = query.Where(x => x.MaSV!.ToLower().Contains(keywordLower)
+                                  || x.HoTen!.ToLower().Contains(keywordLower));
         }
 
         if (gioiTinh.HasValue)
