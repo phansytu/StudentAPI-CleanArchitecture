@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StudentAPI.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitCreate : Migration
+    public partial class FixRelationshipBoMonLopHoc : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,17 +34,11 @@ namespace StudentAPI.Infrastructure.Migrations
                     MaLop = table.Column<string>(type: "varchar(11)", unicode: false, maxLength: 11, nullable: true),
                     tenLop = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false, defaultValue: "Tên Lớp"),
                     chuyenNganh = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true, defaultValue: "Tên chuyên ngành"),
-                    boMonId = table.Column<int>(type: "int", nullable: true),
-                    BoMonId1 = table.Column<int>(type: "int", nullable: true)
+                    boMonId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LopHoc", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_LopHoc_BoMon_BoMonId1",
-                        column: x => x.BoMonId1,
-                        principalTable: "BoMon",
-                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK__LopHoc__boMonId",
                         column: x => x.boMonId,
@@ -65,17 +59,11 @@ namespace StudentAPI.Infrastructure.Migrations
                     ngaySinh = table.Column<DateTime>(type: "date", nullable: true),
                     email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
                     diemTb = table.Column<decimal>(type: "decimal(4,2)", precision: 4, scale: 2, nullable: true),
-                    lopHocId = table.Column<int>(type: "int", nullable: true),
-                    LopHocId1 = table.Column<int>(type: "int", nullable: true)
+                    lopHocId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SinhVien", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_SinhVien_LopHoc_LopHocId1",
-                        column: x => x.LopHocId1,
-                        principalTable: "LopHoc",
-                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK__SinhVien__lopHoc",
                         column: x => x.lopHocId,
@@ -90,19 +78,9 @@ namespace StudentAPI.Infrastructure.Migrations
                 column: "boMonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LopHoc_BoMonId1",
-                table: "LopHoc",
-                column: "BoMonId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_SinhVien_lopHocId",
                 table: "SinhVien",
                 column: "lopHocId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SinhVien_LopHocId1",
-                table: "SinhVien",
-                column: "LopHocId1");
         }
 
         /// <inheritdoc />

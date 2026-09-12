@@ -12,8 +12,8 @@ using StudentAPI.Infrastructure;
 namespace StudentAPI.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260911162222_InitCreate")]
-    partial class InitCreate
+    [Migration("20260912164534_FixRelationshipBoMonLopHoc")]
+    partial class FixRelationshipBoMonLopHoc
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,9 +64,6 @@ namespace StudentAPI.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("boMonId");
 
-                    b.Property<int?>("BoMonId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("ChuyenNganh")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
@@ -93,8 +90,6 @@ namespace StudentAPI.Infrastructure.Migrations
 
                     b.HasIndex("BoMonId")
                         .HasDatabaseName("IX_LopHoc_boMonId");
-
-                    b.HasIndex("BoMonId1");
 
                     b.ToTable("LopHoc", (string)null);
                 });
@@ -132,9 +127,6 @@ namespace StudentAPI.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("lopHocId");
 
-                    b.Property<int?>("LopHocId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("MaSV")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasMaxLength(13)
@@ -151,22 +143,16 @@ namespace StudentAPI.Infrastructure.Migrations
                     b.HasIndex("LopHocId")
                         .HasDatabaseName("IX_SinhVien_lopHocId");
 
-                    b.HasIndex("LopHocId1");
-
                     b.ToTable("SinhVien", (string)null);
                 });
 
             modelBuilder.Entity("StudentAPI.Domain.Entities.LopHoc", b =>
                 {
                     b.HasOne("StudentAPI.Domain.Entities.BoMon", "BoMon")
-                        .WithMany()
+                        .WithMany("LopHocs")
                         .HasForeignKey("BoMonId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .HasConstraintName("FK__LopHoc__boMonId");
-
-                    b.HasOne("StudentAPI.Domain.Entities.BoMon", null)
-                        .WithMany("LopHocs")
-                        .HasForeignKey("BoMonId1");
 
                     b.Navigation("BoMon");
                 });
@@ -174,14 +160,10 @@ namespace StudentAPI.Infrastructure.Migrations
             modelBuilder.Entity("StudentAPI.Domain.Entities.SinhVien", b =>
                 {
                     b.HasOne("StudentAPI.Domain.Entities.LopHoc", "LopHoc")
-                        .WithMany()
+                        .WithMany("SinhViens")
                         .HasForeignKey("LopHocId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .HasConstraintName("FK__SinhVien__lopHoc");
-
-                    b.HasOne("StudentAPI.Domain.Entities.LopHoc", null)
-                        .WithMany("SinhViens")
-                        .HasForeignKey("LopHocId1");
 
                     b.Navigation("LopHoc");
                 });

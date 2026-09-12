@@ -41,7 +41,7 @@ public class LopHocConfiguration : IEntityTypeConfiguration<LopHoc>
             .HasDatabaseName("IX_LopHoc_boMonId");
 
         builder.HasOne(x => x.BoMon)
-            .WithMany()
+            .WithMany(x => x.LopHocs)
             .HasForeignKey(x => x.BoMonId)
             .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK__LopHoc__boMonId");

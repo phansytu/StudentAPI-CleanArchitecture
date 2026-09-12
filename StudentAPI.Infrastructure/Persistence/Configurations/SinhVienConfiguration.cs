@@ -55,7 +55,7 @@ public class SinhVienConfiguration : IEntityTypeConfiguration<SinhVien>
             .HasDatabaseName("IX_SinhVien_lopHocId");
 
         builder.HasOne(x => x.LopHoc)
-            .WithMany()
+            .WithMany(x => x.SinhViens)
             .HasForeignKey(x => x.LopHocId)
             .OnDelete(DeleteBehavior.Restrict)
             .HasConstraintName("FK__SinhVien__lopHoc");
